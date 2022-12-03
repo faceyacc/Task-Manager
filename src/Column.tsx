@@ -16,8 +16,8 @@ export const Column = ({ text }: ColumnProps) => {
             <Card text="Research & Test" />
             <Card text="Build some more" />
             <AddNewItem
-                toggleButtonText="+ Add another list"
-                onAdd={() => console.log("Item created")}
+                toggleButtonText="+ Add another Task"
+                onAdd={() => console.log("Task added!")}
                 dark
             />
       </ColumnContainer>
