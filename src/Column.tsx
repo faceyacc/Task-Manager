@@ -17,7 +17,7 @@ export const Column = ({ text }: ColumnProps) => {
             <Card text="Build some more" />
             <AddNewItem
                 toggleButtonText="+ Add another Task"
-                onAdd={() => console.log("Task added!")}
+                onAdd={(e) => console.log(e)}
                 dark
             />
       </ColumnContainer>

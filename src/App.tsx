@@ -8,7 +8,7 @@ export const App = () =>  {
       <Column text="Build the future"/>
       <AddNewItem
         toggleButtonText="+ Add another list"
-        onAdd={() => console.log("List created!")}
+        onAdd={(e) => console.log(e)}
       />
     </AppContainer>
   )
