@@ -15,6 +15,7 @@ export type Action =
     }
   }
 
+  // Action Creators defined below
 export const addTask = (text: string, listId: string): Action => ({
     type: "ADD_TASK",
     payload: {

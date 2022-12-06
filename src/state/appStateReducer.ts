@@ -1,7 +1,6 @@
 import { Action } from "./actions";
 import { nanoid } from "nanoid";
 import { findItemIndexById, moveItem } from "../utils/arrayUtils";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 export type Task = {
     id: string
@@ -49,6 +48,10 @@ export const appStateReducer = (
             const dragIndex = findItemIndexById(draft.lists, draggedId)
             const hoverIndex = findItemIndexById(draft.lists, hoverId)
             draft.lists = moveItem(draft.lists, dragIndex, hoverIndex)
+            break
+        }
+
+        default: {
             break
         }
     }
