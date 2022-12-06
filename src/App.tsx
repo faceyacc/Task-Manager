@@ -1,14 +1,21 @@
 import { Column } from "./Column"
 import { AppContainer } from "./styles"
 import { AddNewItem } from './AddNewItem'
+import { useAppState } from "./state/AppStateContext"
+import { addlist } from "./state/actions"
 
 export const App = () =>  {
+  const { lists, dispatch } = useAppState()
+
+
   return (
     <AppContainer>
-      <Column text="Build the future"/>
+      {lists.map((list) => (
+        <Column text={list.text} key={list.id} id={list.id}/>
+      ))}
       <AddNewItem
         toggleButtonText="+ Add another list"
-        onAdd={(e) => console.log(e)}
+        onAdd={(text) => dispatch(addlist(text))}
       />
     </AppContainer>
   )
