@@ -1,3 +1,5 @@
+import { DragItem } from "../DragItem"
+
 export type Action =
 | {
     type: "ADD_LIST"
@@ -14,8 +16,12 @@ export type Action =
       hoverId: string  
     }
   }
+| {
+    type: "SET_DRAGGED_ITEM"
+    payload: DragItem | null
+  }
 
-  // Action Creators defined below
+// Action Creators defined below
 export const addTask = (text: string, listId: string): Action => ({
     type: "ADD_TASK",
     payload: {
@@ -35,4 +41,9 @@ export const moveList = (draggedId: string, hoverId: string): Action => ({
     draggedId,
     hoverId
   }
+})
+
+export const setDraggedItem = (draggedItem: DragItem | null): Action => ({
+  type: "SET_DRAGGED_ITEM",
+  payload: draggedItem
 })

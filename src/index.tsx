@@ -8,11 +8,11 @@ import { AppStateProvider } from "./state/AppStateContext"
 
 ReactDOM.render(
   <React.StrictMode>
-    <DndProvider backend={Backend}/>
+    <DndProvider backend={Backend}>
       <AppStateProvider>
         <App />
       </AppStateProvider>
-    {/* </DndProvider> */}
+    </DndProvider>
   </React.StrictMode>,
   document.getElementById("root")
 )
