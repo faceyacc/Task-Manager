@@ -15,12 +15,12 @@ const appData: AppState = {
         {
             id: "1",
             text: "In Progress",
-            tasks: [{ id: "c0", text: "Research and test" }],
+            tasks: [{ id: "c1", text: "Research and test" }],
         },
         {
             id: "2",
             text: "Done",
-            tasks: [{ id: "c0", text: "Build some more" }],
+            tasks: [{ id: "c2", text: "Build some more" }],
         }
     ]
 }
