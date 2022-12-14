@@ -1,5 +1,6 @@
 import { AppState } from "./state/appStateReducer";
 
+// Makes POST request and sends JSON of AppState to the backend
 export const save = (payload: AppState) => {
     return fetch(`${process.env.REACT_APP_BACKEND_ENDPOINT}/save`, {
         method: "POST",
@@ -17,9 +18,9 @@ export const save = (payload: AppState) => {
     })
 }
 
-// Load data from backend
+// Makes GET request to retrieve saved data
 export const load = () => {
-    return fetch(`${process.env.REACT_APP_BACKEND_ENDPOITN}/load`).then(
+    return fetch(`${process.env.REACT_APP_BACKEND_ENDPOINT}/load`).then(
         (response) => {
             if (response.ok) {
                 return response.json() as Promise<AppState>
